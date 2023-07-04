@@ -11,6 +11,7 @@ export default defineConfig({
   build: {
     outDir: './docs',
   },
+  base: '/github.io',
   plugins: [
     vue({ 
       template: { transformAssetUrls }
