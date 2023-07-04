@@ -11,6 +11,7 @@ export default defineConfig({
   build: {
     outDir: '../docs',
   },
+  publicDir: '../docs',
   plugins: [
     vue({ 
       template: { transformAssetUrls }
