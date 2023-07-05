@@ -28,7 +28,7 @@ import "prismjs/plugins/custom-class/prism-custom-class";
 prism.plugins.customClass.map({ number: "prism-number", tag: "prism-tag" });
 
 // sample markdown file
-const mdfile = "/markdownfile/mainpage.md";
+const mdfile = "/github.io/markdownfile/mainpage.md";
 const markDown = ref("");
 
 //marked Options => https://marked.js.org/using_advanced#options
