@@ -27,8 +27,8 @@
   import "prismjs/plugins/custom-class/prism-custom-class";
   prism.plugins.customClass.map({ number: "prism-number", tag: "prism-tag" });
 
-// const mdfile_dir = "/github.io/markdownfile/"
-  const mdfile_dir = "../assets/markdownfile/"
+const mdfile_dir = "/github.io/markdownfile/"
+  // const mdfile_dir = "../assets/markdownfile/"
   const props = defineProps({
     mdfile: String,
   });
@@ -59,8 +59,6 @@
   
   // use the finialized markdown to HTML code in the template
   const mdToHtml = computed(() => {
-    console.log(markDown.value);
-    console.log(mdfile.value)
     const mdhtml = marked.parse(markDown.value);
     return mdhtml;
   });
