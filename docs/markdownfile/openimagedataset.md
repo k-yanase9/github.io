@@ -5,7 +5,7 @@
 
 URL:https://storage.googleapis.com/openimages/web/index.html
 
-<img src="/markdownfile/openimagedataset.png" width="100%">
+<img src="/public/markdownfile/openimagedataset.png" width="100%">
 
 ## detection
 
