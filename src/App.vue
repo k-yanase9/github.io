@@ -1,7 +1,10 @@
 <template>
   <v-app theme="dark">
     <my_header />
-    <router-view />
+    <v-main>
+      <v-img src="./assets/Header.png"></v-img>
+      <router-view />
+    </v-main>
   </v-app>
 </template>
 
