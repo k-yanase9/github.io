@@ -1,12 +1,15 @@
 <template>
     <v-container>
-        <mark_view :mdfile="mdfile"/>
+        <v-card class="mx-auto">
+            <v-container width="100%">
+                <mark_view :mdfile="mdfile" />
+            </v-container>
+        </v-card>
     </v-container>
 </template>
 
 <script setup>
 import mark_view from '@/components/mark_view.vue';
-import { watch } from 'vue';
 import { ref } from 'vue';
 import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';

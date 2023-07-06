@@ -1,37 +1,50 @@
 <template>
-    <v-toolbar >
+    <v-app-bar  >
         <v-img src="../assets/panda2.jpg"  cover max-width="70"></v-img>
-        <v-toolbar-title>k-yanase</v-toolbar-title>
+        <v-toolbar-title class="text-h4">Yanase Kazuya</v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn  class="text-h6"   prepend-icon="mdi-home-outline" color="#88AACC"  @click="goHome" >Home</v-btn>
         <v-menu open-on-hover>
             <template v-slot:activator="{ props }">
                 <v-btn
-                color="primary"
+                color="orange"
                 v-bind="props"
+                class="text-h6"
                 >
-                Dropdown
+                <v-icon icon="mdi-head-lightbulb-outline"></v-icon>
+                Tips
                 </v-btn>
             </template>
-
             <v-list>
                 <v-list-item
-                v-for="(item, index) in items"
+                v-for="(item, index) in tips_card_list"
                 :key="index"
                 >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                
+                <router-link :to="{ name: 'tips', params: {'mdfile':item.mdfile} }">{{ item.title }}</router-link>
                 </v-list-item>
             </v-list>
 
         </v-menu>
-</v-toolbar>
+        <v-spacer></v-spacer>
+        
+        <v-spacer></v-spacer>
+        
+        
+        <v-spacer></v-spacer><v-spacer></v-spacer>
+</v-app-bar>
 </template>
 
 <script setup>
-const items = [
-    { title: 'Click Me' },
-    { title: 'Click Me' },
-    { title: 'Click Me' },
-    { title: 'Click Me 2' },
-  ]
+import { inject } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const tips_card_list = inject('tips_card_list')
+
+const goHome = () => {
+    router.push({ name: 'Home' });
+};
+
 
 </script>

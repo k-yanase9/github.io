@@ -1,1 +1,41 @@
-# test
+# OpenImageDatasetのTips
+----
+<br />
+
+
+URL:https://storage.googleapis.com/openimages/web/index.html
+
+<img src="/public/markdownfile/openimagedataset.png" width="100%">
+
+## detection
+
+----
+
+<br />
+
+- 存在しないイメージがある
+
+　現状把握しているのは、"7f1934f5884fad79"  
+
+
+- オブジェクトが100を超えるものが多数ある
+
+　全部は見切れていないが300を超えるものもあった  
+　別途CSVとかを作った方がいいかも
+
+<br />
+
+## relation
+
+----
+
+<br />
+
+- 存在していないLabelIDがある
+
+　LabelNameでひっかからないものがある。現状は除外したcsvファイルを作って対応  
+
+- isは関係性が崩壊しているのがあるので除外
+
+　relationタスクにMan is Smileとかはrelationなのか？  
+

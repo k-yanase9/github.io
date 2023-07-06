@@ -24,11 +24,15 @@
       </v-col>
     </v-row>
     <v-row>
-      
-      <!-- <router-link > aaa</router-link> -->
+      <p class="text-h4">Tips集</p>
+    </v-row>
+    <v-row>
       <template v-for="item in tips_card_list">
         <v-col cols="4">
-          <v-card :to="{ name: 'tips', params: {'mdfile':item.mdfile} }">
+          <v-card :to="{ name: 'tips', params: {'mdfile':item.mdfile} }"
+          color="#8D4004"
+          theme="dark">
+            <v-img :src="item.imagepath" max-height="300px" cover></v-img>
             <v-card-title>{{item.title}}</v-card-title>
             <v-card-text>{{item.summary}}</v-card-text>
           </v-card>
@@ -39,12 +43,10 @@
 </template>
 
 <script setup>
-import mark_view from '@/components/mark_view.vue';
-import { ref } from 'vue';
-const test_list = ref([{title:"aaa",summary:"aaaa"},{title:"bbb",summary:"bbbb"},{title:"ccc",summary:"cccc"},{title:"ddd",summary:"dddd"},
-                        {title:"aaa",summary:"aaaa"},{title:"bbb",summary:"bbbb"},{title:"ccc",summary:"cccc"},{title:"ddd",summary:"dddd"}])
+import { ref,inject } from 'vue';
 
-const tips_card_list= ref([{title:"openimage_dataset",mdfile:"openimagedataset.md",summary:"openimagedatasetについてあれこれ",imagepath:""},])
+const tips_card_list = inject('tips_card_list')
+console.log(tips_card_list.value)
 
 
 </script>
