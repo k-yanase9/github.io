@@ -51,6 +51,9 @@
   
   // read in the md file and apply the highlight style to the Code Block
   const getMarkdownData = async () => {
+    if (props.mdfile == null){
+      return
+    }
     await fetch(mdfile.value)
       .then((response) => response.text())
       .then((data) => (markDown.value = data));
