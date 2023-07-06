@@ -1,10 +1,6 @@
 <template>
     <v-container>
-        <v-card>
-            <v-card-item>
-                <mark_view :mdfile="mdfile"/>
-            </v-card-item>
-        </v-card>
+        <mark_view :mdfile="mdfile"/>
     </v-container>
 </template>
 
