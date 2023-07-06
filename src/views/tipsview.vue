@@ -15,7 +15,6 @@ const route = useRoute();
 const mdfile = ref(null)
 onMounted(()=>{
     mdfile.value=route.params.mdfile
-    console.log(mdfile.value)   
 })
 
 </script>
