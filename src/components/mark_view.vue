@@ -7,13 +7,11 @@
   <script setup>
   import { ref, computed,defineProps,onMounted,watch } from "vue";
   import { marked } from "marked";
+  import {markedHighlight} from "marked-highlight";
+  import { mangle } from "marked-mangle";
+  import { gfmHeadingId } from "marked-gfm-heading-id";
   import prism from "prismjs";
-  const mdfile_dir = "/github.io/markdownfile/"
-  const props = defineProps({
-    mdfile: String,
-  });
-
-  
+    
   // Add numbering to the Code blocks
   import "prismjs/plugins/line-numbers/prism-line-numbers.js";
   import "prismjs/plugins/line-numbers/prism-line-numbers.css";
@@ -27,13 +25,21 @@
   
   // This is needed for a conflict with other CSS files being used (i.e. Bulma).
   import "prismjs/plugins/custom-class/prism-custom-class";
-
   prism.plugins.customClass.map({ number: "prism-number", tag: "prism-tag" });
+
+// const mdfile_dir = "/github.io/markdownfile/"
+  const mdfile_dir = "../assets/markdownfile/"
+  const props = defineProps({
+    mdfile: String,
+  });
   const mdfile =ref(""); 
   const markDown = ref("");
   
   //marked Options => https://marked.js.org/using_advanced#options
-  marked.use({
+  marked.use(
+    gfmHeadingId(),
+    marked-mangle(),
+    markedHighlight({
     highlight: (code, lang) => {
       if (prism.languages[lang]) {
         return prism.highlight(code, prism.languages[lang], lang);
@@ -41,7 +47,7 @@
         return code;
       }
     },
-  });
+  }));
   
   // read in the md file and apply the highlight style to the Code Block
   const getMarkdownData = async () => {
