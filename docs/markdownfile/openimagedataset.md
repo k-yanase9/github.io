@@ -37,5 +37,5 @@ URL:https://storage.googleapis.com/openimages/web/index.html
 
 - isは関係性が崩壊しているのがあるので除外
 
-　relationタスクにMan is Smileとかはrelationなのか？  
+　Man is Smileはrelationではないと判断
 

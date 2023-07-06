@@ -24,15 +24,16 @@
       </v-col>
     </v-row>
     <v-row>
-      <p class="text-h4">Tips集</p>
+      <p class="text-h4">Tips集(更新が新しいもの)</p>
     </v-row>
     <v-row>
       <template v-for="item in tips_card_list">
         <v-col cols="4">
           <v-card :to="{ name: 'tips', params: {'mdfile':item.mdfile} }"
           color="#8D4004"
-          theme="dark">
-            <v-img :src="item.imagepath" max-height="300px" cover></v-img>
+          theme="dark"
+          height="200px">
+            <v-img :src="item.imagepath" max-height="100px" cover></v-img>
             <v-card-title>{{item.title}}</v-card-title>
             <v-card-text>{{item.summary}}</v-card-text>
           </v-card>
@@ -43,11 +44,29 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+import { watch } from 'vue';
 import { ref,inject } from 'vue';
+const tips_list = inject('tips_list')
+const tips_card_list = ref(null)
 
-const tips_card_list = inject('tips_card_list')
-console.log(tips_card_list.value)
+const get_card_tips = ()=>{
+  tips_card_list.value = tips_list.value.slice()
+  tips_card_list.value.sort((a,b)=>{
+      if (a.last_modify < b.last_modify) return 1;
+      if (a.last_modify > b.last_modify) return -1;
+      return 0;
+    })
+  tips_card_list.value = tips_card_list.value.slice(0,3)
+}
 
+onMounted(()=>{
+  get_card_tips()
+})
+
+watch(tips_list,(newVal,oldVal)=>{
+ get_card_tips()
+},{deep:true})
 
 </script>
 

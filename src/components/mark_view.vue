@@ -54,9 +54,17 @@
     if (props.mdfile == null){
       return
     }
+    // await fetch(mdfile.value)
+    //   .then((response) => response.text())
+    //   .then((data) => {markDown.value = data});
     await fetch(mdfile.value)
-      .then((response) => response.text())
-      .then((data) => (markDown.value = data));
+      .then((response) => {
+        console.log(response.headers.get('last-modified'))
+        return response.text()
+      })
+      .then((data) => {
+        markDown.value = data
+      });
     prism.highlightAll(); // perform the highlighting of the Code Blocks
   };
   

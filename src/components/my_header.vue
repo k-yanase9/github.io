@@ -17,7 +17,7 @@
             </template>
             <v-list>
                 <v-list-item
-                v-for="(item, index) in tips_card_list"
+                v-for="(item, index) in tips_list"
                 :key="index"
                 >
                 
@@ -40,7 +40,7 @@ import { inject } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-const tips_card_list = inject('tips_card_list')
+const tips_list = inject('tips_list')
 
 const goHome = () => {
     router.push({ name: 'Home' });
