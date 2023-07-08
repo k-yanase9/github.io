@@ -9,30 +9,29 @@
   </v-app>
 </template>
 
+<script>
+  import axios from 'axios'
+  import { provide,onMounted,ref,readonly } from 'vue';
+</script>
+
 <script setup>
-import { provide } from 'vue';
-import my_header from './components/my_header.vue';
-import { ref } from 'vue';
-import { readonly } from 'vue';
-import { onMounted } from 'vue';
+  import my_header from './components/my_header.vue';
+  const src_path = "/github.io/"
+  const tips_list_filepath = src_path + "tips_list.json"
 
-const src_path = "/github.io/markdownfile/"
+  const tips_list= ref([])
 
-const tips_list= ref([{title:"openimage_dataset",mdfile:"openimagedataset.md",summary:"openimagedatasetについてあれこれ",imagepath:src_path + "openimagedataset.png",last_modify:null},
-                      {title:"processpool",mdfile:"process_pool.md",summary:"CPUの数の暴力でゴリ押す方法",imagepath:src_path + "process_pool.jpg",last_modify:null},])
-onMounted(()=>{
-  // 最終更新時間を取得
-  // さらに、最終更新時間でソート
-  tips_list.value = tips_list.value.map((item)=>{
-       fetch(src_path + item.mdfile)
-      .then((response) => {
-        item.last_modify = response.headers.get('last-modified')
-      })
-      return item
+  onMounted(()=>{
+    axios(tips_list_filepath)
+    .then((res)=>{
+      tips_list.value = res.data
+      console.log(tips_list.value)
     })
+    .catch((err)=>{
+      console.log(err)
+    })
+  })
 
-})
-
-provide('tips_list',tips_list)
+  provide('tips_list',tips_list)
 
 </script>

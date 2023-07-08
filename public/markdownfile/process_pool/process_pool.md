@@ -1,6 +1,6 @@
 # CPUの数の暴力で押す方法
 
-<img src="/github.io/markdownfile/process_pool.jpg" heght="100px">
+<img src="/github.io/markdownfile/process_pool/process_pool.jpg" heght="100px">
 
 -----
 
@@ -10,7 +10,8 @@
 
 ---
 
-<br />
+<details>
+<summary>全体コード</summary>
 
 ```python
 from concurrent.futures import ProcessPoolExecutor
@@ -42,16 +43,17 @@ for i in range(1,len(result)):
 df.to_csv("/home/k-yanase/openimagedatgaset/oidv6-vaildation-annotations-vrd-fix.csv")
 
 ```
+</details>
+
 <br />
 
 ## 並列処理させる関数の定義
 
 ---
 
-<br />
-
 実際に並列処理させる関数を定義する  
 ここでリターンする変数がスタックされていく
+
 
 ```python
 def proc(df:pd.DataFrame) -> pd.DataFrame:
@@ -64,6 +66,7 @@ def proc(df:pd.DataFrame) -> pd.DataFrame:
     return ret_df
 
 ```
+
 <br />
 
 ## データの分割

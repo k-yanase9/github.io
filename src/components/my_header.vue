@@ -20,8 +20,7 @@
                 v-for="(item, index) in tips_list"
                 :key="index"
                 >
-                
-                <router-link :to="{ name: 'tips', params: {'mdfile':item.mdfile} }">{{ item.title }}</router-link>
+                <v-btn @click="goTips(item)" variant="text"> {{ item.title }}</v-btn>
                 </v-list-item>
             </v-list>
 
@@ -35,16 +34,23 @@
 </v-app-bar>
 </template>
 
+<script>
+    import { useRouter } from 'vue-router';
+</script>
+
 <script setup>
-import { inject } from 'vue';
-import { useRouter } from 'vue-router';
+    import { inject } from 'vue';
+    
 
-const router = useRouter();
-const tips_list = inject('tips_list')
+    const router = useRouter();
+    const tips_list = inject('tips_list')
 
-const goHome = () => {
-    router.push({ name: 'Home' });
-};
+    const goHome = () => {
+        router.push({ name: 'Home' });
+    };
 
+    const goTips = (item) => {
+        router.push({ name: 'tips',params: {'mdfile':item.rootdir + item.mdfile} });
+    };
 
 </script>

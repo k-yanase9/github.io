@@ -1,0 +1,18 @@
+[
+    {
+        "title": "openimage_dataset",
+        "rootdir": "markdownfile/openimagedataset/",
+        "mdfile": "openimagedataset.md",
+        "summary": "openimagedatasetについてあれこれ",
+        "imagepath": "openimagedataset.png",
+        "last_modify": "2023-07-07 20:34:48"
+    },
+    {
+        "title": "processpool",
+        "rootdir": "markdownfile/process_pool/",
+        "mdfile": "process_pool.md",
+        "summary": "CPUの数の暴力でゴリ押す方法",
+        "imagepath": "process_pool.jpg",
+        "last_modify": "2023-07-08 21:33:44"
+    }
+]
