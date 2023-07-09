@@ -1,10 +1,10 @@
 <template>
     <v-app-bar  >
         <v-img src="../assets/panda2.jpg"  cover max-width="70"></v-img>
-        <v-toolbar-title class="text-h4">Yanase Kazuya</v-toolbar-title>
+        <v-toolbar-title class="text-h4 d-none d-sm-block">Yanase Kazuya</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn  class="text-h6"   prepend-icon="mdi-home-outline" color="#88AACC"  @click="goHome" >Home</v-btn>
-        <v-menu open-on-hover>
+        <v-menu open-on-hover open-on-click>
             <template v-slot:activator="{ props }">
                 <v-btn
                 color="orange"
