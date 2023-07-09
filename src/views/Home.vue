@@ -1,8 +1,8 @@
 <template>
   <v-container width="90%" >
-    <v-row align="center" justify="center" nax-width="90%" max-height="50%">
-      <v-col  cols="2" justify="center">
-        <v-img src="../assets/panda2.jpg" max-height="400px"></v-img>
+    <v-row align="center" justify="center" max-width="90%" max-height="50%">
+      <v-col md="2" cols="12" justify="center">
+        <v-img src="../assets/panda2.jpg" max-height="60%"></v-img>
         <p  class="text-h5 text-center">梁瀬　和哉</p>
         <p  class="text-center font-weight-thin">Yanase　Kazuya</p>
         <p  class="text-center font-weight-thin">R&D　Engineer</p>
