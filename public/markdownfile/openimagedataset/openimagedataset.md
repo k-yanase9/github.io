@@ -1,17 +1,13 @@
 # OpenImageDatasetのTips
+
 ----
 <br />
-
 
 URL:https://storage.googleapis.com/openimages/web/index.html
 
 <img src="/github.io/markdownfile/openimagedataset/openimagedataset.png" width="100%">
 
 ## detection
-
-----
-
-<br />
 
 - 存在しないイメージがある
 
@@ -27,9 +23,6 @@ URL:https://storage.googleapis.com/openimages/web/index.html
 
 ## relation
 
-----
-
-<br />
 
 - 存在していないLabelIDがある
 

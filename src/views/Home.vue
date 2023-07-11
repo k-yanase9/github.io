@@ -23,13 +23,13 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row class="mt-10">
       <p class="text-h4">Tips集(新着)</p>
     </v-row>
     <v-row>
       <template v-for="item in tips_card_list">
         <v-col cols="4">
-          <v-card :to="{ name: 'tips', params: {'mdfile':item.rootdir + item.mdfile} }"
+          <v-card :to="{ name: 'tips', params: {'mdfile':item.rootdir + item.mdfile,'create_at':item.create_at,'last_modify':item.last_modify} }"
           color="#8D4004"
           theme="dark"
           height="200px">
@@ -50,7 +50,9 @@
   const tips_list = inject('tips_list')
   const tips_card_list = ref(null)
 
+  // tips_listから最新の3つを取得
   const get_card_tips = ()=>{
+    // sliceでコピーを作成することで参照渡しを防ぐ
     tips_card_list.value = tips_list.value.slice()
     tips_card_list.value.sort((a,b)=>{
         if (new Date(a.last_modify) < new Date(b.last_modify)) return 1;

@@ -10,7 +10,7 @@ const routes = [
     component:Home
 },
 {
-  path: '/tips/:mdfile?',
+  path: '/tips/:mdfile?/:create_at?/:last_modify?',
   name: 'tips',
   component:tipsview
 },

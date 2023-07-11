@@ -8,8 +8,6 @@
 
 ##　まずは全体
 
----
-
 <details>
 <summary>全体コード</summary>
 
@@ -49,8 +47,6 @@ df.to_csv("/home/k-yanase/openimagedatgaset/oidv6-vaildation-annotations-vrd-fix
 
 ## 並列処理させる関数の定義
 
----
-
 実際に並列処理させる関数を定義する  
 ここでリターンする変数がスタックされていく
 
@@ -71,8 +67,6 @@ def proc(df:pd.DataFrame) -> pd.DataFrame:
 
 ## データの分割
 
-----
-
 <br />
 
 map関数に流すためにデータを分割
@@ -84,8 +78,6 @@ f_arr= [rel[index*len(rel)//300:(index+1)*len(rel)//300-1] for index in range(30
 <br />
 
 ## 並列処理＋スタック
-
-----
 
 <br />
 
@@ -102,8 +94,6 @@ result = [r for r in ret]
 <br />
 
 ## 結合と保存
-
----
 
 <br />
 

@@ -46,7 +46,7 @@
     };
 
     const goTips = (item) => {
-        router.push({ name: 'tips',params: {'mdfile':item.rootdir + item.mdfile} });
+        router.push({ name: 'tips', params: {'mdfile':item.rootdir + item.mdfile,'create_at':item.create_at,'last_modify':item.last_modify}});
     };
 
 </script>

@@ -11,7 +11,7 @@
 
 <script>
   import axios from 'axios'
-  import { provide,onMounted,ref,readonly } from 'vue';
+  import { provide,onMounted,ref} from 'vue';
 </script>
 
 <script setup>
