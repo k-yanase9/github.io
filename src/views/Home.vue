@@ -24,15 +24,16 @@
       </v-col>
     </v-row>
     <v-row class="mt-10">
-      <p class="text-h4">Tips集(新着)</p>
+      <p class="text-h4 d-none d-lg-block">Tips集(新着)</p>
     </v-row>
-    <v-row>
+    <v-row >
       <template v-for="item in tips_card_list">
         <v-col cols="4">
           <v-card :to="{ name: 'tips', params: {'mdfile':item.rootdir + item.mdfile,'create_at':item.create_at,'last_modify':item.last_modify} }"
           color="#8D4004"
           theme="dark"
-          height="200px">
+          height="200px"
+          class="d-none d-lg-block">
             <v-img :src="item.rootdir+item.imagepath" max-height="100px" cover></v-img>
             <v-card-title>{{item.title}}</v-card-title>
             <v-card-text>{{item.summary}}</v-card-text>
