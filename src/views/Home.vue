@@ -24,7 +24,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <p class="text-h4">Tips集(更新が新しいもの)</p>
+      <p class="text-h4">Tips集(新着)</p>
     </v-row>
     <v-row>
       <template v-for="item in tips_card_list">

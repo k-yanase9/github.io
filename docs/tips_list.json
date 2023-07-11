@@ -14,5 +14,13 @@
         "summary": "CPUの数の暴力でゴリ押す方法",
         "imagepath": "process_pool.jpg",
         "last_modify": "2023-07-08 21:33:44"
+    },
+    {
+        "title": "vuejs_to_githubpage",
+        "rootdir": "markdownfile/vuejs_to_githubpage/",
+        "mdfile": "vuejs_to_githubpage.md",
+        "summary": "vuejsで作ったサイトをgithubpageにあげる方法",
+        "imagepath": "vuejs_to_githubpage.jpg",
+        "last_modify": "2023-07-11 11:53:33"
     }
 ]

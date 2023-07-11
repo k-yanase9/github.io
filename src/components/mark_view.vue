@@ -18,6 +18,7 @@
   import "prismjs/plugins/line-numbers/prism-line-numbers.css";
   import "prismjs/components/prism-python.js";
   import "prismjs/components/prism-bash.js";
+  import "prismjs/components/prism-docker.js";
 
   import "prismjs/plugins/toolbar/prism-toolbar.js"; // required for the following plugins
   import "prismjs/plugins/toolbar/prism-toolbar.css"; // required for the following plugins
